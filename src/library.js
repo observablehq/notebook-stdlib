@@ -1,4 +1,5 @@
 import {require as requireDefault} from "d3-require";
+import arrow from "./arrow.js";
 import DOM from "./dom/index.js";
 import Files from "./files/index.js";
 import {NoFileAttachments} from "./fileAttachment.js";
@@ -20,6 +21,7 @@ export default Object.assign(function Library(resolver) {
   const require = requirer(resolver);
   Object.defineProperties(this, properties({
     FileAttachment: () => NoFileAttachments,
+    Arrow: () => arrow(require),
     Inputs: () => require("@observablehq/inputs@0.8.0/dist/inputs.umd.min.js"),
     Mutable: () => Mutable,
     Plot: () => require("@observablehq/plot@0.1.0/dist/plot.umd.min.js"),
